@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-if __name__ != "__import":
+if __name__ == "__import":
     import sys
     n = len(sys.argv)
     add_result = 0
