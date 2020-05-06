@@ -6,3 +6,5 @@ def new_in_list(my_list, idx, element):
             return new_list
         else:
             return new_list
+    else:
+        return
