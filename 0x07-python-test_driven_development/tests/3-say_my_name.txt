@@ -1,0 +1,29 @@
+========================================================================
+'Test for 3-say_my_name module'
+========================================================================
+'Funtion to test:   say_my_name()'
+========================================================================
+
+'Import module'
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+'Test normal case'
+>>> say_my_name('Walt', 'Disney')
+My name is Walt Disney
+
+'Test just first_name'
+>>> say_my_name('Miguel')
+My name is Miguel 
+
+'Test just last_name'
+>>> say_my_name('', 'Montoya')
+My name is  Montoya
+
+'Test empty name'
+>>> say_my_name('')
+My name is  
+
+'Test None string'
+>>> say_my_name(None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
