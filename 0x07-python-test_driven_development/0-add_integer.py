@@ -2,6 +2,8 @@
 """
 Addition of two numbers
 """
+
+
 def add_integer(a, b=98):
     """ Addition of two numbers
 
