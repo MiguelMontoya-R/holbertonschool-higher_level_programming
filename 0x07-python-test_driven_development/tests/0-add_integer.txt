@@ -3,6 +3,8 @@
 ========================================================================
 'Funtion to test:   add_integer()'
 ========================================================================
+
+'Import Module'
 >>> add_integer = __import__('0-add_integer').add_integer
 
 'Positive integers'

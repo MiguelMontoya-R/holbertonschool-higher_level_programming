@@ -1,0 +1,70 @@
+========================================================================
+'Test for 0-add_integer module'
+========================================================================
+'Funtion to test:   add_integer()'
+========================================================================
+
+'Import Module'
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+'Test module'
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+'Divide negative numbers'
+>>> matrix_divided([[1, 2, -3], [4, -5, 6]], 3)
+[[0.33, 0.67, -1.0], [1.33, -1.67, 2.0]]
+
+'Different row size in matrix[0]'
+>>> matrix_divided([[1, 2, 3, 4], [4, 5, 6]], 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+'Different row size in martix [1]'
+>>> matrix_divided([[1, 2, 3], [4, 5, 6, 7]], 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+'Division by 0'
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+'Passing string as div'
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], "3")
+Traceback (most recent call last):
+TypeError: div must be a number
+
+'Passing string in matrix'
+>>> matrix_divided([[1, "2", 3], [4, 5, 6]], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+'Empty matrix but with len(matrix) = 1'
+>>> matrix_divided([[]], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+'Empty matrix'
+>>> matrix_divided([], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+'Matrix with just one element for list'
+>>> matrix_divided([[1], [2]], 2)
+[[0.5], [1.0]]
+
+'Matrix with just one element in one list and the other empty'
+>>> matrix_divided([[1], []], 2)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+'Matrix with one element'
+>>> matrix_divided([[1]], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+'Matrix with two elements but just in one list'
+>>> matrix_divided([[1, 2]], 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
