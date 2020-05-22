@@ -1,0 +1,29 @@
+========================================================================
+'Test for 0-add_integer module'
+========================================================================
+'Funtion to test:   add_integer()'
+========================================================================
+>>> add_integer = __import__('0-add_integer').add_integer
+
+'Positive integers'
+>>> add_integer(4, 5)
+9
+
+'Negative Numbers'
+>>> add_integer(-4, -10)
+-14
+
+'String in a'
+>>> add_integer("3", 4)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+'String in b'
+>>> add_integer(2, "4")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+'String in both'
+>>> add_integer("2", "4")
+Traceback (most recent call last):
+TypeError: a must be an integer
