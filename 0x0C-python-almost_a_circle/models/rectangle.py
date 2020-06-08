@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from models.base import Base
 """Rectangle class
 """
 
@@ -21,6 +22,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
