@@ -71,7 +71,7 @@ class Rectangle(Base):
             raise TypeError('y must be an integer')
         elif value < 0:
             raise ValueError('y must be >= 0')
-        self._y = value
+        self.__y = value
 
     def area(self):
         return (self.__height * self.__width)
@@ -81,3 +81,10 @@ class Rectangle(Base):
             for j in range(self.__width):
                 print('#', end='')
             print()
+
+    def __str__(self):
+        return "[Rectangle] ({}) {} / {} - {} / {}".format(self.id,
+                                                           self.__x,
+                                                           self.__y,
+                                                           self.__width,
+                                                           self.__height)
