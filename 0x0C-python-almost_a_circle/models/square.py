@@ -14,7 +14,7 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        return '[Square] {} {}/{} - {}'.format(
+        return '[Square] ({}) {}/{} - {}'.format(
             self.id, self.x, self.y, self.width)
 
     @property
@@ -30,3 +30,13 @@ class Square(Rectangle):
         else:
             self.width = value
             self.height = value
+
+    def update(self, *args, **kwargs):
+        k = ['id', 'size', 'x', 'y']
+
+        if args:
+            for i in range(len(args)):
+                setattr(self, k[i], args[i])
+        else:
+            for attr, value in kwargs.items():
+                setattr(self, attr, value)
