@@ -93,9 +93,12 @@ class Rectangle(Base):
                                                            self.__width,
                                                            self.__height)
 
-    def update(self, *args):
-        self.id = args[0]
-        self.__width = args[1]
-        self.__height = args[2]
-        self.__x = args[3]
-        self.__y = args[4]
+    def update(self, *args, **kwargs):
+        k = ['id', 'width', 'height', 'x', 'y']
+
+        if args or len(args) != 0:
+            for i in range(len(args)):
+                setattr(self, k[i], args[i])
+        else:
+            for attr, value in kwargs.items():
+                setattr(self, attr, value)
