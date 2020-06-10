@@ -48,3 +48,10 @@ class Base:
                 new_l.append(i.to_dictionary())
             with open(fn, 'w') as fn_2:
                 fn_2.write(cls.to_json_string(new_l))
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string:
+            return json.loads(json_string)
+        else:
+            return '[]'
