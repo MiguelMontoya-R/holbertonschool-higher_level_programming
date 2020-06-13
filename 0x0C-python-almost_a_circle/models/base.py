@@ -51,6 +51,14 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """[summary]
+
+        Args:
+            json_string ([type]): [description]
+
+        Returns:
+            [type]: [description]
+        """
         if json_string:
             return json.loads(json_string)
         else:
@@ -58,6 +66,11 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         if cls.__name__ == 'Rectangle':
             tmp = cls(1, 1)
         elif cls.__name__ == 'Square':
