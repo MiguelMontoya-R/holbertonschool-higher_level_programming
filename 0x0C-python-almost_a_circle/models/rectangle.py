@@ -26,10 +26,24 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+
+        Raises:
+            TypeError: [description]
+            ValueError: [description]
+        """
         if type(value) is not int:
             raise TypeError('width must be an integer')
         elif value <= 0:
@@ -39,10 +53,24 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+
+        Raises:
+            TypeError: [description]
+            ValueError: [description]
+        """
         if type(value) is not int:
             raise TypeError('height must be an integer')
         elif value <= 0:
@@ -51,10 +79,24 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return self.__x
 
     @x.setter
     def x(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+
+        Raises:
+            TypeError: [description]
+            ValueError: [description]
+        """
         if type(value) is not int:
             raise TypeError('x must be an integer')
         elif value < 0:
@@ -63,10 +105,24 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return self.__y
 
     @y.setter
     def y(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+
+        Raises:
+            TypeError: [description]
+            ValueError: [description]
+        """
         if type(value) is not int:
             raise TypeError('y must be an integer')
         elif value < 0:
@@ -74,9 +130,16 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return (self.__height * self.__width)
 
     def display(self):
+        """[summary]
+        """
         for k in range(self.__y):
             print()
         for i in range(self.__height):
@@ -87,6 +150,11 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.__x,
                                                        self.__y,
@@ -94,6 +162,8 @@ class Rectangle(Base):
                                                        self.__height)
 
     def update(self, *args, **kwargs):
+        """[summary]
+        """
         k = ['id', 'width', 'height', 'x', 'y']
 
         if args:
@@ -104,6 +174,11 @@ class Rectangle(Base):
                 setattr(self, attr, value)
 
     def to_dictionary(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         dic = {'id': self.id,
                'width': self.__width,
                'height': self.__height,
