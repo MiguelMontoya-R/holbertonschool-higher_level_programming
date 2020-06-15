@@ -83,11 +83,12 @@ class Base:
     def load_from_file(cls):
         """ Load from file
         """
+        file_list = []
         try:
             with open(cls.__name__ + '.json', 'r') as f:
-                file_data = cls.from_json_string(f.read())
+                file_list = cls.from_json_string(f.read())
             for k, v in enumerate(file_data):
-                file_data[k] = cls.create(**file_data[k])
+                file_list[k] = cls.create(**file_list[k])
         except:
             pass
-        return file_data
+        return file_list
