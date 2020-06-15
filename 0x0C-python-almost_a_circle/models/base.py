@@ -87,8 +87,11 @@ class Base:
         try:
             with open(cls.__name__ + '.json', 'r') as f:
                 file_list = cls.from_json_string(f.read())
-            for k, v in enumerate(file_data):
+            for k, v in enumerate(file_list):
                 file_list[k] = cls.create(**file_list[k])
         except:
             pass
         return file_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
