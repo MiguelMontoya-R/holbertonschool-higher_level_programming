@@ -45,7 +45,7 @@ class Base:
         fn = cls.__name__ + '.json'
         if list_objs:
             for i in list_objs:
-                new_l.append(i.to_dictionary())
+                new_l.append(cls.to_dictionary(i))
             with open(fn, 'w') as fn_2:
                 fn_2.write(cls.to_json_string(new_l))
 
