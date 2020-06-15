@@ -24,3 +24,18 @@
 [666, -666, 666, 1, 2]
 >>> l.print_sorted()
 [-666, 1, 2, 666, 666]
+
+
+>>> l = MyList()
+>>> l.print_sorted()
+[]
+
+>>> l = MyList()
+>>> l.append(8)
+>>> l.append(1)
+>>> l
+[8, 1]
+>>> l.print_sorted()
+[1, 8]
+>>> l
+[8, 1]
