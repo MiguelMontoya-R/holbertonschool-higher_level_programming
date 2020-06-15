@@ -92,6 +92,3 @@ class Base:
         except:
             pass
         return file_list
-
-    @classmethod
-    def save_to_file_csv(cls, list_objs):
